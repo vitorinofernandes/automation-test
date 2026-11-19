@@ -1,0 +1,151 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"settings": {
+		"appearanceTools": true,
+		"layout": {
+			"contentSize": "720px",
+			"wideSize": "1280px"
+		},
+		"color": {
+			"defaultPalette": false,
+			"defaultGradients": false,
+			"palette": [
+				{ "slug": "brand-green", "name": "Brand Green", "color": "#014225" },
+				{ "slug": "black", "name": "Black", "color": "#111111" },
+				{ "slug": "white", "name": "White", "color": "#FFFFFF" },
+				{ "slug": "primary-950", "name": "Primary 950", "color": "#014225" },
+				{ "slug": "primary-900", "name": "Primary 900", "color": "#016639" },
+				{ "slug": "primary-800", "name": "Primary 800", "color": "#029151" },
+				{ "slug": "primary-700", "name": "Primary 700", "color": "#03BB69" },
+				{ "slug": "primary-600", "name": "Primary 600", "color": "#03E580" },
+				{ "slug": "primary-500", "name": "Primary 500", "color": "#18FB96" },
+				{ "slug": "primary-400", "name": "Primary 400", "color": "#42FCA9" },
+				{ "slug": "primary-300", "name": "Primary 300", "color": "#6CFDBC" },
+				{ "slug": "primary-200", "name": "Primary 200", "color": "#97FDCF" },
+				{ "slug": "primary-100", "name": "Primary 100", "color": "#C1FEE3" },
+				{ "slug": "primary-50", "name": "Primary 50", "color": "#EBFFF6" }
+			]
+		},
+		"typography": {
+			"fluid": true,
+			"defaultFontSizes": false,
+			"fontFamilies": [
+				{
+					"slug": "hanken-grotesk",
+					"name": "Hanken Grotesk",
+					"fontFamily": "\"Hanken Grotesk\", system-ui, sans-serif",
+					"fontFace": [
+						{
+							"fontFamily": "Hanken Grotesk",
+							"fontWeight": "400 500",
+							"fontStyle": "normal",
+							"fontDisplay": "swap",
+							"src": ["file:./assets/fonts/hanken-grotesk-400-500-latin-ext.woff2"],
+							"unicodeRange": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+						},
+						{
+							"fontFamily": "Hanken Grotesk",
+							"fontWeight": "400 500",
+							"fontStyle": "normal",
+							"fontDisplay": "swap",
+							"src": ["file:./assets/fonts/hanken-grotesk-400-500-latin.woff2"],
+							"unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+						}
+					]
+				},
+				{
+					"slug": "space-mono",
+					"name": "Space Mono",
+					"fontFamily": "\"Space Mono\", ui-monospace, monospace",
+					"fontFace": [
+						{
+							"fontFamily": "Space Mono",
+							"fontWeight": "400",
+							"fontStyle": "normal",
+							"fontDisplay": "swap",
+							"src": ["file:./assets/fonts/space-mono-400-latin-ext.woff2"],
+							"unicodeRange": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+						},
+						{
+							"fontFamily": "Space Mono",
+							"fontWeight": "400",
+							"fontStyle": "normal",
+							"fontDisplay": "swap",
+							"src": ["file:./assets/fonts/space-mono-400-latin.woff2"],
+							"unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+						}
+					]
+				}
+			],
+			"fontSizes": [
+				{ "slug": "x-small", "name": "13", "size": "13px" },
+				{ "slug": "small", "name": "14", "size": "14px" },
+				{ "slug": "base", "name": "15", "size": "15px" },
+				{ "slug": "medium", "name": "16", "size": "16px" },
+				{ "slug": "large", "name": "30", "size": "30px", "fluid": { "min": "24px", "max": "30px" } },
+				{ "slug": "x-large", "name": "56", "size": "56px", "fluid": { "min": "36px", "max": "56px" } },
+				{ "slug": "xx-large", "name": "72", "size": "72px", "fluid": { "min": "42px", "max": "72px" } }
+			]
+		},
+		"spacing": {
+			"units": ["px", "rem", "%", "vw"],
+			"spacingSizes": [
+				{ "slug": "10", "name": "XS", "size": "8px" },
+				{ "slug": "20", "name": "S", "size": "16px" },
+				{ "slug": "30", "name": "M", "size": "24px" },
+				{ "slug": "40", "name": "L", "size": "40px" },
+				{ "slug": "50", "name": "XL", "size": "64px" },
+				{ "slug": "60", "name": "2XL", "size": "96px" },
+				{ "slug": "70", "name": "3XL", "size": "128px" }
+			]
+		}
+	},
+	"styles": {
+		"color": {
+			"background": "var(--wp--preset--color--white)",
+			"text": "var(--wp--preset--color--black)"
+		},
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--hanken-grotesk)",
+			"fontSize": "var(--wp--preset--font-size--medium)",
+			"fontWeight": "400",
+			"lineHeight": "1.5"
+		},
+		"spacing": {
+			"blockGap": "24px"
+		},
+		"elements": {
+			"heading": {
+				"typography": {
+					"fontWeight": "400",
+					"lineHeight": "1.1"
+				}
+			},
+			"h1": { "typography": { "fontSize": "var(--wp--preset--font-size--xx-large)" } },
+			"h2": { "typography": { "fontSize": "var(--wp--preset--font-size--x-large)" } },
+			"h3": { "typography": { "fontSize": "var(--wp--preset--font-size--large)" } },
+			"link": {
+				"color": { "text": "var(--wp--preset--color--primary-900)" }
+			},
+			"button": {
+				"color": {
+					"background": "var(--wp--preset--color--brand-green)",
+					"text": "var(--wp--preset--color--white)"
+				},
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--medium)",
+					"fontWeight": "500"
+				},
+				"border": { "radius": "999px" },
+				"spacing": {
+					"padding": { "top": "14px", "bottom": "14px", "left": "24px", "right": "24px" }
+				}
+			}
+		}
+	},
+	"templateParts": [
+		{ "name": "header", "title": "Header", "area": "header" },
+		{ "name": "footer", "title": "Footer", "area": "footer" }
+	]
+}
