@@ -16,7 +16,10 @@ if ( ! empty( $a['inlineVideo'] ) ) {
 } elseif ( ! empty( $a['inlineImage'] ) ) {
 	$pill1 = '<span class="se-statement__pill">' . se_media_img( $a['inlineImage'], '', 'se-statement__pill-img' ) . '</span>';
 }
-$pill2 = '';
+if ( '' === $pill1 ) {
+	$pill1 = '<span class="se-statement__pill"><span class="se-ph"></span></span>';
+}
+$pill2 = '<span class="se-statement__pill"><span class="se-ph"></span></span>';
 if ( ! empty( $a['inlineImage2'] ) ) {
 	$pill2 = '<span class="se-statement__pill">' . se_media_img( $a['inlineImage2'], '', 'se-statement__pill-img' ) . '</span>';
 }
