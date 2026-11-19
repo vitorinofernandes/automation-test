@@ -1,0 +1,14 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "se/statement",
+	"title": "SE Statement",
+	"category": "design",
+	"icon": "editor-quote",
+	"description": "Large statement headline.",
+	"supports": { "html": false, "align": false },
+	"render": "file:./render.php",
+	"attributes": {
+		"statement": { "type": "string", "default": "We make everyday life simpler and safer for homes and businesses across the Stavanger region." }
+	}
+}

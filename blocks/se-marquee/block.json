@@ -1,0 +1,25 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "se/marquee",
+	"title": "SE Marquee strip",
+	"category": "design",
+	"icon": "image-flip-horizontal",
+	"description": "Scrolling strip of short trust labels.",
+	"supports": { "html": false, "align": false },
+	"render": "file:./render.php",
+	"attributes": {
+		"items": {
+			"type": "array",
+			"default": [
+				{ "text": "FREE INSPECTION" },
+				{ "text": "FIXED PRICE ON STANDARD JOBS" },
+				{ "text": "DOCUMENTATION ON ALL WORK" },
+				{ "text": "DSB REGISTERED" },
+				{ "text": "ZAPTEC & EASEE CERTIFIED" },
+				{ "text": "REPLY WITHIN 2 HOURS" }
+			],
+			"items": { "type": "object", "properties": { "text": { "type": "string" } } }
+		}
+	}
+}

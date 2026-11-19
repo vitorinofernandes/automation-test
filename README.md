@@ -23,4 +23,20 @@ The theme lives in the repository root. Changes arrive as pull requests into `ma
 
 Reuse a block from this list before building a new one. Add every new block here.
 
-_No blocks yet._
+All blocks live in `blocks/<name>/` (`block.json` + `render.php`), are registered in `functions.php`, and are edited in the block sidebar (generic editor: `assets/js/se-editor.js`). Styles: `assets/css/blocks.css`; behaviour: `assets/js/se-blocks.js`.
+
+| Block | Use |
+| --- | --- |
+| `se/hero` | Hero: heading, bullets, CTA, phone, background video and poster |
+| `se/services` | "What we do" carousel of service cards |
+| `se/stats` | "Why homeowners choose us" key figures |
+| `se/marquee` | Scrolling strip of trust labels |
+| `se/statement` | Large statement headline |
+| `se/recent-work` | Recent work, 4-item project grid |
+| `se/testimonial` | One customer quote with CTA |
+| `se/pricing` | Price explorer (option C): service list and detail panel |
+| `se/faq` | "Ask an electrician" questions and answer card |
+| `se/reels` | Instagram handle with self-hosted video |
+| `se/contact` | Heading and Contact Form 7 form (set the form ID) |
+
+Image and video fields take a Media Library URL; empty images show a grey placeholder.

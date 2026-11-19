@@ -1,0 +1,19 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "se/testimonial",
+	"title": "SE Testimonial",
+	"category": "design",
+	"icon": "format-quote",
+	"description": "One customer quote with a call to action.",
+	"supports": { "html": false, "align": false },
+	"render": "file:./render.php",
+	"attributes": {
+		"stars": { "type": "string", "default": "★★★★★" },
+		"quote": { "type": "string", "default": "“Quick, neat, and we had the documentation the same day.”" },
+		"name": { "type": "string", "default": "Kristine Haugland" },
+		"place": { "type": "string", "default": "Randaberg" },
+		"ctaLabel": { "type": "string", "default": "Book free inspection" },
+		"ctaUrl": { "type": "string", "default": "#contact" }
+	}
+}

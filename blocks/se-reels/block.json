@@ -1,0 +1,19 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "se/reels",
+	"title": "SE Reels video",
+	"category": "design",
+	"icon": "video-alt3",
+	"description": "Instagram handle with a self-hosted video.",
+	"supports": { "html": false, "align": false },
+	"render": "file:./render.php",
+	"attributes": {
+		"handle": { "type": "string", "default": "@stavangerelektro" },
+		"linkLabel": { "type": "string", "default": "Follow on Instagram" },
+		"linkUrl": { "type": "string", "default": "#" },
+		"reelVideo": { "type": "string", "default": "" },
+		"posterImage": { "type": "string", "default": "" },
+		"duration": { "type": "string", "default": "0:12" }
+	}
+}
