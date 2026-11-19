@@ -9,6 +9,7 @@
 	"supports": { "html": false, "align": false },
 	"render": "file:./render.php",
 	"attributes": {
+		"backgroundImage": { "type": "string", "default": "" },
 		"anchor": { "type": "string", "default": "contact" },
 		"heading": { "type": "string", "default": "Book a free inspection." },
 		"formId": { "type": "string", "default": "" },

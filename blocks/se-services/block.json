@@ -24,7 +24,7 @@
 				{ "title": "Fuse box", "text": "Modern boards with earth-fault breakers and surge protection.", "price": "from kr 14 900", "badge": "" },
 				{ "title": "New build", "text": "Complete installation, from drawings to handover.", "price": "Price after inspection", "badge": "" }
 			],
-			"items": { "type": "object", "properties": { "title": { "type": "string" }, "text": { "type": "string" }, "price": { "type": "string" }, "badge": { "type": "string" } } }
+			"items": { "type": "object", "properties": { "title": { "type": "string" }, "text": { "type": "string" }, "price": { "type": "string" }, "badge": { "type": "string" }, "image": { "type": "string" } } }
 		}
 	}
 }

@@ -26,7 +26,7 @@
 				{ "name": "Lighting", "price": "on inspection", "options": "", "packagePrice": "", "included": "" },
 				{ "name": "New build", "price": "on inspection", "options": "", "packagePrice": "", "included": "" }
 			],
-			"items": { "type": "object", "properties": { "name": { "type": "string" }, "price": { "type": "string" }, "options": { "type": "string" }, "packagePrice": { "type": "string" }, "included": { "type": "string" } } }
+			"items": { "type": "object", "properties": { "name": { "type": "string" }, "price": { "type": "string" }, "options": { "type": "string" }, "packagePrice": { "type": "string" }, "included": { "type": "string" }, "image": { "type": "string" } } }
 		}
 	}
 }

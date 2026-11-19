@@ -28,15 +28,15 @@ All blocks live in `blocks/<name>/` (`block.json` + `render.php`), are registere
 | Block | Use |
 | --- | --- |
 | `se/hero` | Hero: heading, bullets, CTA, phone, background video and poster |
-| `se/services` | "What we do" carousel of service cards |
+| `se/services` | "What we do" carousel of service cards, each with an illustration |
 | `se/stats` | "Why homeowners choose us" key figures, optional background photo |
 | `se/marquee` | Scrolling strip of trust labels |
-| `se/statement` | Large statement headline, optional inline pill image/video (two spots) |
+| `se/statement` | Large statement headline, optional inline pill image/video (two spots), optional highlighted start with grey fade-out for the rest |
 | `se/recent-work` | Recent work, 4-item project grid |
 | `se/testimonial` | One customer quote with CTA |
-| `se/pricing` | Price explorer (option C): service list and detail panel |
+| `se/pricing` | Price explorer (option C): service list and detail panel with an illustration per service |
 | `se/faq` | "Ask an electrician" questions and answer card |
-| `se/reels` | Instagram handle with self-hosted video |
-| `se/contact` | Heading and Contact Form 7 form (set the form ID) |
+| `se/reels` | Instagram handle with a row of self-hosted video tiles (video, poster, duration each) |
+| `se/contact` | Heading and Contact Form 7 form (set the form ID), optional background photo with green overlay |
 
 Image and video fields take a Media Library URL; empty images show a grey placeholder.

@@ -11,6 +11,30 @@
 		} );
 	} );
 
+	// Reels: click a tile to play or pause its video.
+	document.querySelectorAll( '[data-se-reel]' ).forEach( function ( tile ) {
+		var video = tile.querySelector( 'video' );
+		var btn = tile.querySelector( '[data-se-reel-play]' );
+		if ( ! video || ! btn ) {
+			return;
+		}
+		var toggle = function () {
+			if ( video.paused ) {
+				video.play();
+			} else {
+				video.pause();
+			}
+		};
+		btn.addEventListener( 'click', toggle );
+		video.addEventListener( 'click', toggle );
+		video.addEventListener( 'play', function () {
+			tile.classList.add( 'is-playing' );
+		} );
+		video.addEventListener( 'pause', function () {
+			tile.classList.remove( 'is-playing' );
+		} );
+	} );
+
 	// Tabs: price explorer and FAQ.
 	document.querySelectorAll( '[data-se-tabs]' ).forEach( function ( root ) {
 		var tabs = root.querySelectorAll( '[data-se-tab]' );

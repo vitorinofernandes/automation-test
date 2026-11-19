@@ -9,7 +9,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 $a = $attributes;
 ?>
-<section class="se-section se-contact" id="<?php echo esc_attr( $a['anchor'] ); ?>">
+<section class="se-section se-contact<?php echo ! empty( $a['backgroundImage'] ) ? ' se-contact--has-bg' : ''; ?>" id="<?php echo esc_attr( $a['anchor'] ); ?>">
+	<?php if ( ! empty( $a['backgroundImage'] ) ) : ?>
+		<?php echo se_media_img( $a['backgroundImage'], '', 'se-contact__bg' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
+	<?php endif; ?>
 	<div class="se-inner se-contact__inner">
 		<h2><?php echo se_text( $a['heading'] ); // phpcs:ignore WordPress.Security.EscapeOutput ?></h2>
 		<div class="se-contact__form">

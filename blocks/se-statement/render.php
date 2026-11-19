@@ -21,10 +21,23 @@ if ( ! empty( $a['inlineImage2'] ) ) {
 	$pill2 = '<span class="se-statement__pill">' . se_media_img( $a['inlineImage2'], '', 'se-statement__pill-img' ) . '</span>';
 }
 
-$words = preg_split( '/\s+/', trim( (string) $a['statement'] ) );
+// Optional highlight: the first words (the text in "highlight") stay dark, the rest fades to grey.
+$statement = trim( (string) $a['statement'] );
+$highlight = trim( (string) ( $a['highlight'] ?? '' ) );
+$hl_words  = $highlight && 0 === strpos( $statement, $highlight ) ? count( preg_split( '/\s+/', $highlight ) ) : 0;
+
+$words = preg_split( '/\s+/', $statement );
 $out   = '';
 $done2 = false;
+$open  = false;
 foreach ( $words as $i => $w ) {
+	if ( $hl_words && $i === $hl_words ) {
+		$out .= '</span><span class="se-statement__off">';
+	}
+	if ( $hl_words && 0 === $i ) {
+		$out .= '<span class="se-statement__on">';
+		$open = true;
+	}
 	$out .= ( $i ? ' ' : '' ) . esc_html( $w );
 	if ( 2 === $i && $pill1 ) {
 		$out  .= ' ' . $pill1;
@@ -34,6 +47,9 @@ foreach ( $words as $i => $w ) {
 		$out  .= ' ' . $pill2;
 		$done2 = true;
 	}
+}
+if ( $open ) {
+	$out .= '</span>';
 }
 // Fallback: pills whose spot was not found go at the end.
 if ( $pill1 ) {
