@@ -12,7 +12,7 @@
 		"inlineImage": { "type": "string", "default": "" },
 		"inlineVideo": { "type": "string", "default": "" },
 		"inlineImage2": { "type": "string", "default": "" },
-		"highlight": { "type": "string", "default": "" },
+		"highlight": { "type": "string", "default": "We make everyday life simpler and safer" },
 		"statement": { "type": "string", "default": "We make everyday life simpler and safer for homes and businesses across the Stavanger region." }
 	}
 }
