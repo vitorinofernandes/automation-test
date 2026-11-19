@@ -66,6 +66,24 @@ function se_enqueue_editor_assets() {
 		SE_THEME_VERSION,
 		true
 	);
+
+	// The se/* blocks are registered in PHP (block.json + render.php). The editor only knows a block
+	// that is also registered in JavaScript, so se-editor.js registers each one from this list.
+	$blocks = array();
+	foreach ( glob( get_theme_file_path( 'blocks/*/block.json' ) ) as $file ) {
+		$meta = wp_json_file_decode( $file, array( 'associative' => true ) );
+		if ( empty( $meta['name'] ) ) {
+			continue;
+		}
+		$blocks[ $meta['name'] ] = array(
+			'title'       => $meta['title'] ?? $meta['name'],
+			'description' => $meta['description'] ?? '',
+			'category'    => $meta['category'] ?? 'design',
+			'icon'        => $meta['icon'] ?? 'layout',
+			'attributes'  => $meta['attributes'] ?? array(),
+		);
+	}
+	wp_add_inline_script( 'se-editor', 'window.seBlocks = ' . wp_json_encode( $blocks ) . ';', 'before' );
 }
 add_action( 'enqueue_block_editor_assets', 'se_enqueue_editor_assets' );
 

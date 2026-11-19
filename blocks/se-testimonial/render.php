@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 $a = $attributes;
 ?>
-<section class="se-section se-testimonial">
+<section class="alignfull se-section se-testimonial">
 	<div class="se-inner se-testimonial__inner">
 		<figure>
 			<p class="se-stars" aria-hidden="true"><?php echo esc_html( $a['stars'] ); ?></p>

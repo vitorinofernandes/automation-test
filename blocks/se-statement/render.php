@@ -59,7 +59,7 @@ if ( $pill2 && ! $done2 ) {
 	$out .= ' ' . $pill2;
 }
 ?>
-<section class="se-section se-statement">
+<section class="alignfull se-section se-statement">
 	<div class="se-inner">
 		<p class="se-statement__text"><?php echo $out; // phpcs:ignore WordPress.Security.EscapeOutput ?></p>
 	</div>

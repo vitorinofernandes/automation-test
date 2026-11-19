@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 $a = $attributes;
 ?>
-<section class="se-section se-hero">
+<section class="alignfull se-section se-hero">
 	<?php if ( ! empty( $a['backgroundVideo'] ) ) : ?>
 		<video class="se-hero__bg" src="<?php echo esc_url( $a['backgroundVideo'] ); ?>" poster="<?php echo esc_url( $a['posterImage'] ); ?>" autoplay muted loop playsinline aria-hidden="true"></video>
 	<?php else : ?>

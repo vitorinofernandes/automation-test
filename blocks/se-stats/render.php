@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 $a = $attributes;
 ?>
-<section class="se-section se-stats<?php echo ! empty( $a['backgroundImage'] ) ? ' se-stats--has-bg' : ''; ?>">
+<section class="alignfull se-section se-stats<?php echo ! empty( $a['backgroundImage'] ) ? ' se-stats--has-bg' : ''; ?>">
 	<?php if ( ! empty( $a['backgroundImage'] ) ) : ?>
 		<?php echo se_media_img( $a['backgroundImage'], '', 'se-stats__bg' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
 	<?php endif; ?>

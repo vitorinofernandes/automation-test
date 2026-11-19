@@ -11,7 +11,7 @@ $a     = $attributes;
 $items = (array) $a['items'];
 $total = count( $items );
 ?>
-<section class="se-section se-services" id="<?php echo esc_attr( $a['anchor'] ); ?>" data-se-carousel>
+<section class="alignfull se-section se-services" id="<?php echo esc_attr( $a['anchor'] ); ?>" data-se-carousel>
 	<div class="se-inner">
 		<div class="se-head">
 			<div>

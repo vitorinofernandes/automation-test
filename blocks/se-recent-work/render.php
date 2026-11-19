@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 $a = $attributes;
 ?>
-<section class="se-section se-work" id="<?php echo esc_attr( $a['anchor'] ); ?>">
+<section class="alignfull se-section se-work" id="<?php echo esc_attr( $a['anchor'] ); ?>">
 	<div class="se-inner">
 		<div class="se-head">
 			<h2><?php echo se_text( $a['heading'] ); // phpcs:ignore WordPress.Security.EscapeOutput ?></h2>

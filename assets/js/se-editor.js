@@ -81,15 +81,29 @@
 				Fragment,
 				null,
 				el( InspectorControls, null, el( PanelBody, { title: 'Content', initialOpen: true }, simple ), repeaters ),
-				el( 'div', useBlockProps(), el( ServerSideRender, { block: name, attributes } ) )
+				el( 'div', useBlockProps( { className: 'alignfull' } ), el( ServerSideRender, { block: name, attributes } ) )
 			);
 		};
 	}
 
-	wp.hooks.addFilter( 'blocks.registerBlockType', 'se/edit', function ( settings, name ) {
-		if ( name.indexOf( 'se/' ) !== 0 ) {
-			return settings;
+	// Register every se/* block in the editor (they are rendered by PHP; the editor needs a JS
+	// registration too, or it shows "Your site doesn't include support for this block").
+	const defs = window.seBlocks || {};
+	Object.keys( defs ).forEach( function ( name ) {
+		if ( wp.blocks.getBlockType( name ) ) {
+			return;
 		}
-		return Object.assign( {}, settings, { edit: makeEdit( settings.attributes || {}, name ), save: () => null } );
+		const d = defs[ name ];
+		wp.blocks.registerBlockType( name, {
+			apiVersion: 3,
+			title: d.title,
+			description: d.description,
+			category: d.category,
+			icon: d.icon,
+			attributes: d.attributes,
+			supports: { html: false },
+			edit: makeEdit( d.attributes || {}, name ),
+			save: () => null,
+		} );
 	} );
 } )( window.wp );
