@@ -31,7 +31,13 @@ $total = count( $items );
 					</div>
 					<h3><?php echo esc_html( $it['title'] ?? '' ); ?></h3>
 					<p><?php echo esc_html( $it['text'] ?? '' ); ?></p>
-					<div class="se-card__art"><?php echo se_media_img( $it['image'] ?? '', $it['title'] ?? '', 'se-card__img' ); // phpcs:ignore WordPress.Security.EscapeOutput ?></div>
+					<?php $second = se_asset_url( $it['secondImage'] ?? '' ); ?>
+					<div class="se-card__art<?php echo $second ? ' se-card__art--duo' : ''; ?>">
+						<?php echo se_media_img( $it['image'] ?? '', $it['title'] ?? '', 'se-card__img' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
+						<?php if ( $second ) : ?>
+							<?php echo se_media_img( $second, '', 'se-card__img' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
+						<?php endif; ?>
+					</div>
 					<p class="se-card__price"><?php echo esc_html( $it['price'] ?? '' ); ?></p>
 				</article>
 			<?php endforeach; ?>

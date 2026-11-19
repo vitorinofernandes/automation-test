@@ -15,8 +15,8 @@
 	const label = ( key ) => key.replace( /([A-Z])/g, ' $1' ).replace( /^./, ( c ) => c.toUpperCase() );
 
 	function field( key, value, onChange ) {
-		if ( /(Image|Video)$/.test( key ) ) {
-			const isVideo = /Video$/.test( key );
+		if ( /(image|video)$/i.test( key ) ) {
+			const isVideo = /video$/i.test( key );
 			return el(
 				'div',
 				{ key, style: { marginBottom: 16 } },

@@ -28,7 +28,7 @@ All blocks live in `blocks/<name>/` (`block.json` + `render.php`), are registere
 | Block | Use |
 | --- | --- |
 | `se/hero` | Hero: heading, bullets, CTA, phone, background video and poster |
-| `se/services` | "What we do" carousel of service cards, each with an illustration |
+| `se/services` | "What we do" carousel of service cards, each with an illustration plus an optional second image (El-kontroll: clipboard + meter); image fields take a URL or a theme path like `assets/illustrations/x.svg` |
 | `se/stats` | "Why homeowners choose us" key figures, optional background photo |
 | `se/marquee` | Scrolling strip of trust labels |
 | `se/statement` | Large statement headline, optional inline pill image/video (two spots), optional highlighted start with grey fade-out for the rest |
