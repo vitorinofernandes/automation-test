@@ -12,6 +12,8 @@ $a = $attributes;
 <section class="alignfull se-section se-stats<?php echo ! empty( $a['backgroundImage'] ) ? ' se-stats--has-bg' : ''; ?>">
 	<?php if ( ! empty( $a['backgroundImage'] ) ) : ?>
 		<?php echo se_media_img( $a['backgroundImage'], '', 'se-stats__bg' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
+	<?php else : ?>
+		<span class="se-ph se-stats__bg" aria-hidden="true"></span>
 	<?php endif; ?>
 	<div class="se-inner se-stats__inner">
 		<h2><?php echo se_text( $a['heading'] ); // phpcs:ignore WordPress.Security.EscapeOutput ?></h2>

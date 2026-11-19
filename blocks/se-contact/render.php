@@ -12,8 +12,11 @@ $a = $attributes;
 <section class="alignfull se-section se-contact<?php echo ! empty( $a['backgroundImage'] ) ? ' se-contact--has-bg' : ''; ?>" id="<?php echo esc_attr( $a['anchor'] ); ?>">
 	<?php if ( ! empty( $a['backgroundImage'] ) ) : ?>
 		<?php echo se_media_img( $a['backgroundImage'], '', 'se-contact__bg' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
+	<?php else : ?>
+		<span class="se-ph se-contact__bg" aria-hidden="true"></span>
 	<?php endif; ?>
 	<div class="se-inner se-contact__inner">
+		<div class="se-contact__card">
 		<h2><?php echo se_text( $a['heading'] ); // phpcs:ignore WordPress.Security.EscapeOutput ?></h2>
 		<div class="se-contact__form">
 			<?php
@@ -24,6 +27,10 @@ $a = $attributes;
 			}
 			?>
 		</div>
-		<p class="se-contact__closing"><a href="<?php echo esc_url( $a['closingUrl'] ); ?>"><?php echo esc_html( $a['closing'] ); ?></a></p>
+		<?php if ( ! empty( $a['privacyNote'] ) ) : ?>
+			<p class="se-contact__note"><?php echo esc_html( $a['privacyNote'] ); ?></p>
+		<?php endif; ?>
+		</div>
+		<p class="se-contact__closing"><a href="<?php echo esc_url( $a['closingUrl'] ); ?>"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><?php echo esc_html( $a['closing'] ); ?></a></p>
 	</div>
 </section>

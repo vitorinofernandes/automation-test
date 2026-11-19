@@ -1,0 +1,14 @@
+<svg width="280" height="240" viewBox="0 0 280 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 220H270" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke="#1F2B25"/>
+<path d="M104 50H176C183.732 50 190 56.268 190 64V136C190 143.732 183.732 150 176 150H104C96.268 150 90 143.732 90 136V64C90 56.268 96.268 50 104 50Z" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke="#1F2B25"/>
+<path d="M172 100C172 117.673 157.673 132 140 132C122.327 132 108 117.673 108 100C108 82.3269 122.327 68 140 68C157.673 68 172 82.3269 172 100Z" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke="#1F2B25"/>
+<path d="M128 105C130.761 105 133 102.761 133 100C133 97.2386 130.761 95 128 95C125.239 95 123 97.2386 123 100C123 102.761 125.239 105 128 105Z" fill="#1F2B25" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke="#1F2B25"/>
+<path d="M152 105C154.761 105 157 102.761 157 100C157 97.2386 154.761 95 152 95C149.239 95 147 97.2386 147 100C147 102.761 149.239 105 152 105Z" fill="#1F2B25" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke="#1F2B25"/>
+<path d="M217 200C217 216 190 214 176 220" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke="#1F2B25"/>
+<path d="M210 160V146" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke="#1F2B25"/>
+<path d="M224 160V146" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke="#1F2B25"/>
+<path d="M228 160H206C202.686 160 200 162.686 200 166V194C200 197.314 202.686 200 206 200H228C231.314 200 234 197.314 234 194V166C234 162.686 231.314 160 228 160Z" fill="#1F2B25" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke="#1F2B25"/>
+<path d="M75 198H35C31.134 198 28 201.134 28 205C28 208.866 31.134 212 35 212H75C78.866 212 82 208.866 82 205C82 201.134 78.866 198 75 198Z" fill="#97FDCF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke="#1F2B25"/>
+<path d="M82 205H124" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke="#1F2B25"/>
+<path d="M124 201V209" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke="#1F2B25"/>
+</svg>

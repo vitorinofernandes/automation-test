@@ -12,6 +12,7 @@
 		"backgroundImage": { "type": "string", "default": "" },
 		"anchor": { "type": "string", "default": "contact" },
 		"heading": { "type": "string", "default": "Book a free inspection." },
+		"privacyNote": { "type": "string", "default": "We use your information to provide you with relevant content and, with your consent, send you updates that you may find useful*" },
 		"formId": { "type": "string", "default": "" },
 		"closing": { "type": "string", "default": "That’s us — call 51 54 44 44" },
 		"closingUrl": { "type": "string", "default": "tel:+4751544444" }
