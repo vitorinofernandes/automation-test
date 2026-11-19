@@ -17,14 +17,14 @@
 		"items": {
 			"type": "array",
 			"default": [
-				{ "title": "Electrician", "text": "Repairs, new sockets and troubleshooting — big or small jobs.", "price": "from kr 1 090 / hr", "badge": "" },
-				{ "title": "EV charger", "text": "Zaptec Go and Easee, installed at a fixed price with load balancing.", "price": "from kr 13 490", "badge": "" },
-				{ "title": "Lighting", "text": "Indoor, outdoor and smart lighting, planned together with you.", "price": "Price after inspection", "badge": "" },
-				{ "title": "El-kontroll", "text": "A full safety check of your home, with a written report.", "price": "from kr 2 990", "badge": "230 V" },
-				{ "title": "Fuse box", "text": "Modern boards with earth-fault breakers and surge protection.", "price": "from kr 14 900", "badge": "" },
-				{ "title": "New build", "text": "Complete installation, from drawings to handover.", "price": "Price after inspection", "badge": "" }
+				{ "title": "Electrician", "text": "Repairs, new sockets and troubleshooting — big or small jobs.", "price": "from kr 1 090 / hr", "badge": "", "image": "assets/illustrations/electrician.svg", "secondImage": "" },
+				{ "title": "EV charger", "text": "Zaptec Go and Easee, installed at a fixed price with load balancing.", "price": "from kr 13 490", "badge": "", "image": "assets/illustrations/ev-charger.svg", "secondImage": "" },
+				{ "title": "Lighting", "text": "Indoor, outdoor and smart lighting, planned together with you.", "price": "Price after inspection", "badge": "", "image": "assets/illustrations/lighting.svg", "secondImage": "" },
+				{ "title": "El-kontroll", "text": "A full safety check of your home, with a written report.", "price": "from kr 2 990", "badge": "230 V", "image": "assets/illustrations/clipboard.svg", "secondImage": "assets/illustrations/meter.svg" },
+				{ "title": "Fuse box", "text": "Modern boards with earth-fault breakers and surge protection.", "price": "from kr 14 900", "badge": "", "image": "assets/illustrations/fuse-box.svg", "secondImage": "" },
+				{ "title": "New build", "text": "Complete installation, from drawings to handover.", "price": "Price after inspection", "badge": "", "image": "assets/illustrations/new-build.svg", "secondImage": "" }
 			],
-			"items": { "type": "object", "properties": { "title": { "type": "string" }, "text": { "type": "string" }, "price": { "type": "string" }, "badge": { "type": "string" }, "image": { "type": "string" } } }
+			"items": { "type": "object", "properties": { "title": { "type": "string" }, "text": { "type": "string" }, "price": { "type": "string" }, "badge": { "type": "string" }, "image": { "type": "string" }, "secondImage": { "type": "string" } } }
 		}
 	}
 }

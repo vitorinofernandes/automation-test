@@ -107,7 +107,20 @@ function se_text( $s ) {
 	return nl2br( esc_html( (string) $s ) );
 }
 
+/**
+ * Full URLs pass through; a theme-relative path (e.g. assets/illustrations/x.svg)
+ * becomes its theme URL, or '' when the file is not in the theme.
+ */
+function se_asset_url( $url ) {
+	$url = trim( (string) $url );
+	if ( '' === $url || preg_match( '#^([a-z][a-z0-9+.-]*:|/)#i', $url ) ) {
+		return $url;
+	}
+	return file_exists( get_theme_file_path( $url ) ) ? get_theme_file_uri( $url ) : '';
+}
+
 function se_media_img( $url, $alt = '', $class = '' ) {
+	$url = se_asset_url( $url );
 	if ( $url ) {
 		return '<img class="' . esc_attr( $class ) . '" src="' . esc_url( $url ) . '" alt="' . esc_attr( $alt ) . '" loading="lazy" />';
 	}
