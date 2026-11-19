@@ -28,30 +28,33 @@ $items = (array) $a['items'];
 			<div class="se-pricing__panels">
 				<?php foreach ( $items as $i => $it ) : ?>
 					<div class="se-pricing__panel" role="tabpanel" data-se-panel<?php echo 0 === $i ? '' : ' hidden'; ?>>
-						<p class="se-label"><?php echo esc_html( strtoupper( $it['name'] ?? '' ) ); ?></p>
-						<?php $opts = array_filter( array_map( 'trim', explode( ',', (string) ( $it['options'] ?? '' ) ) ) ); ?>
-						<?php if ( $opts ) : ?>
-							<div class="se-chips">
-								<?php foreach ( $opts as $o ) : ?>
-									<span class="se-chip"><?php echo esc_html( $o ); ?></span>
-								<?php endforeach; ?>
-							</div>
-						<?php endif; ?>
-						<?php if ( ! empty( $it['packagePrice'] ) ) : ?>
-							<p class="se-label"><?php echo esc_html( $a['packageLabel'] ); ?></p>
-							<p class="se-pricing__price"><?php echo esc_html( $it['packagePrice'] ); ?> <small><?php echo esc_html( $a['vatNote'] ); ?></small></p>
-						<?php else : ?>
-							<p class="se-pricing__price"><?php echo esc_html( $it['price'] ?? '' ); ?></p>
-						<?php endif; ?>
-						<?php $inc = se_lines( $it['included'] ?? '' ); ?>
-						<?php if ( $inc ) : ?>
-							<ul class="se-ticks">
-								<?php foreach ( $inc as $line ) : ?>
-									<li><?php echo esc_html( $line ); ?></li>
-								<?php endforeach; ?>
-							</ul>
-						<?php endif; ?>
-						<a class="se-btn" href="<?php echo esc_url( $a['ctaUrl'] ); ?>"><?php echo esc_html( $a['ctaLabel'] ); ?></a>
+						<div class="se-pricing__text">
+							<p class="se-label"><?php echo esc_html( strtoupper( $it['name'] ?? '' ) ); ?></p>
+							<?php $opts = array_filter( array_map( 'trim', explode( ',', (string) ( $it['options'] ?? '' ) ) ) ); ?>
+							<?php if ( $opts ) : ?>
+								<div class="se-chips">
+									<?php foreach ( $opts as $o ) : ?>
+										<span class="se-chip"><?php echo esc_html( $o ); ?></span>
+									<?php endforeach; ?>
+								</div>
+							<?php endif; ?>
+							<?php if ( ! empty( $it['packagePrice'] ) ) : ?>
+								<p class="se-label"><?php echo esc_html( $a['packageLabel'] ); ?></p>
+								<p class="se-pricing__price"><?php echo esc_html( $it['packagePrice'] ); ?> <small><?php echo esc_html( $a['vatNote'] ); ?></small></p>
+							<?php else : ?>
+								<p class="se-pricing__price"><?php echo esc_html( $it['price'] ?? '' ); ?></p>
+							<?php endif; ?>
+							<?php $inc = se_lines( $it['included'] ?? '' ); ?>
+							<?php if ( $inc ) : ?>
+								<ul class="se-ticks">
+									<?php foreach ( $inc as $line ) : ?>
+										<li><?php echo esc_html( $line ); ?></li>
+									<?php endforeach; ?>
+								</ul>
+							<?php endif; ?>
+							<a class="se-btn" href="<?php echo esc_url( $a['ctaUrl'] ); ?>"><?php echo esc_html( $a['ctaLabel'] ); ?></a>
+						</div>
+						<div class="se-pricing__art"><?php echo se_media_img( $it['image'] ?? '', $it['name'] ?? '', 'se-pricing__img' ); // phpcs:ignore WordPress.Security.EscapeOutput ?></div>
 					</div>
 				<?php endforeach; ?>
 			</div>
