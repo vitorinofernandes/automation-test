@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 $items = (array) $attributes['items'];
 ?>
-<section class="se-marquee" aria-label="<?php esc_attr_e( 'Highlights', 'stavanger-elektro' ); ?>">
+<section class="alignfull se-marquee" aria-label="<?php esc_attr_e( 'Highlights', 'stavanger-elektro' ); ?>">
 	<?php foreach ( array( false, true ) as $dup ) : ?>
 		<ul class="se-marquee__list"<?php echo $dup ? ' aria-hidden="true"' : ''; ?>>
 			<?php foreach ( $items as $it ) : ?>

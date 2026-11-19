@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $a     = $attributes;
 $items = (array) $a['items'];
 ?>
-<section class="se-section se-pricing" id="<?php echo esc_attr( $a['anchor'] ); ?>" data-se-tabs>
+<section class="alignfull se-section se-pricing" id="<?php echo esc_attr( $a['anchor'] ); ?>" data-se-tabs>
 	<div class="se-inner">
 		<div class="se-pricing__intro">
 			<h2><?php echo se_text( $a['heading'] ); // phpcs:ignore WordPress.Security.EscapeOutput ?></h2>

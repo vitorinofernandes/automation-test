@@ -24,7 +24,7 @@ if ( ! $reels ) {
 	$reels = array_fill( 0, 4, array() );
 }
 ?>
-<section class="se-section se-reels">
+<section class="alignfull se-section se-reels">
 	<div class="se-inner se-reels__inner">
 		<div class="se-reels__text">
 			<h2><?php echo esc_html( $a['handle'] ); ?></h2>
