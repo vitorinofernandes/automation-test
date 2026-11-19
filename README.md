@@ -40,3 +40,5 @@ All blocks live in `blocks/<name>/` (`block.json` + `render.php`), are registere
 | `se/contact` | Heading and Contact Form 7 form (set the form ID), optional background photo with green overlay |
 
 Image and video fields take a Media Library URL; empty images show a grey placeholder.
+
+When you change CSS or JS, raise `Version` in `style.css`: it is the cache-busting version for the theme's stylesheets and scripts, so the site loads the new files.
