@@ -16,7 +16,7 @@ $a = $attributes;
 		<?php echo se_media_img( $a['posterImage'], '', 'se-hero__bg' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
 	<?php endif; ?>
 	<div class="se-inner se-hero__inner">
-		<p class="se-label"><?php echo esc_html( $a['eyebrow'] ); ?></p>
+		<?php if ( ! empty( $a['eyebrow'] ) ) : ?><p class="se-label"><?php echo esc_html( $a['eyebrow'] ); ?></p><?php endif; ?>
 		<h1><?php echo se_text( $a['heading'] ); // phpcs:ignore WordPress.Security.EscapeOutput ?></h1>
 		<ul class="se-ticks">
 			<?php foreach ( (array) $a['bullets'] as $b ) : ?>

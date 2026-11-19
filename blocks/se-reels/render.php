@@ -9,15 +9,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 $a     = $attributes;
 $reels = array_values( (array) ( $a['reels'] ?? array() ) );
-if ( ! $reels ) {
+if ( ! $reels && ! empty( $a['reelVideo'] ) ) {
 	// Saved content from before: the single video becomes one tile.
 	$reels = array(
 		array(
-			'reelVideo'   => $a['reelVideo'] ?? '',
+			'reelVideo'   => $a['reelVideo'],
 			'posterImage' => $a['posterImage'] ?? '',
 			'duration'    => $a['duration'] ?? '',
 		),
 	);
+}
+if ( ! $reels ) {
+	// Nothing set yet: four placeholder tiles, as in the design.
+	$reels = array_fill( 0, 4, array() );
 }
 ?>
 <section class="se-section se-reels">

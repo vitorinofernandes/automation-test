@@ -36,7 +36,7 @@ All blocks live in `blocks/<name>/` (`block.json` + `render.php`), are registere
 | `se/testimonial` | One customer quote with CTA |
 | `se/pricing` | Price explorer (option C): service list and detail panel with an illustration per service |
 | `se/faq` | "Ask an electrician" questions and answer card |
-| `se/reels` | Instagram handle with a row of self-hosted video tiles (video, poster, duration each) |
+| `se/reels` | Instagram handle with a row of self-hosted video tiles (video, poster, duration each); four placeholder tiles until filled |
 | `se/contact` | Heading and Contact Form 7 form (set the form ID), optional background photo with green overlay |
 
 Image and video fields take a Media Library URL; empty images show a grey placeholder.
