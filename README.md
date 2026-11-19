@@ -29,9 +29,9 @@ All blocks live in `blocks/<name>/` (`block.json` + `render.php`), are registere
 | --- | --- |
 | `se/hero` | Hero: heading, bullets, CTA, phone, background video and poster |
 | `se/services` | "What we do" carousel of service cards |
-| `se/stats` | "Why homeowners choose us" key figures |
+| `se/stats` | "Why homeowners choose us" key figures, optional background photo |
 | `se/marquee` | Scrolling strip of trust labels |
-| `se/statement` | Large statement headline |
+| `se/statement` | Large statement headline, optional inline pill image/video (two spots) |
 | `se/recent-work` | Recent work, 4-item project grid |
 | `se/testimonial` | One customer quote with CTA |
 | `se/pricing` | Price explorer (option C): service list and detail panel |
