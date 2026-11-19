@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "se/hero",
+	"title": "SE Hero",
+	"category": "design",
+	"icon": "cover-image",
+	"description": "Hero with background video, bullets and call to action.",
+	"supports": { "html": false, "align": false },
+	"render": "file:./render.php",
+	"attributes": {
+		"eyebrow": { "type": "string", "default": "Free inspection" },
+		"heading": { "type": "string", "default": "Authorised electrician\nin Stavanger" },
+		"bullets": {
+			"type": "array",
+			"default": [
+				{ "text": "Free inspection" },
+				{ "text": "Fixed price on standard jobs" },
+				{ "text": "Documentation on all work" }
+			],
+			"items": { "type": "object", "properties": { "text": { "type": "string" } } }
+		},
+		"ctaLabel": { "type": "string", "default": "Book free inspection" },
+		"ctaUrl": { "type": "string", "default": "#contact" },
+		"phoneNote": { "type": "string", "default": "or call 51 54 44 44" },
+		"phoneUrl": { "type": "string", "default": "tel:+4751544444" },
+		"backgroundVideo": { "type": "string", "default": "" },
+		"posterImage": { "type": "string", "default": "" }
+	}
+}

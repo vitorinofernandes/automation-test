@@ -1,0 +1,32 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "se/pricing",
+	"title": "SE Pricing (price explorer)",
+	"category": "design",
+	"icon": "money-alt",
+	"description": "Pick a service on the left to see its price and what is included.",
+	"supports": { "html": false, "align": false },
+	"render": "file:./render.php",
+	"attributes": {
+		"anchor": { "type": "string", "default": "prices" },
+		"heading": { "type": "string", "default": "Know the price\nbefore we start" },
+		"intro": { "type": "string", "default": "Pick a service to see what it costs and what’s included. All prices include VAT." },
+		"packageLabel": { "type": "string", "default": "Fixed package price" },
+		"vatNote": { "type": "string", "default": "incl. VAT" },
+		"ctaLabel": { "type": "string", "default": "Book free inspection" },
+		"ctaUrl": { "type": "string", "default": "#contact" },
+		"items": {
+			"type": "array",
+			"default": [
+				{ "name": "EV charger", "price": "from kr 13 490", "options": "Zaptec Go, Easee Charge Up", "packagePrice": "kr 16990", "included": "Zaptec Go delivered and installed\nLoad balancing set up\nDeclaration of conformity" },
+				{ "name": "El-kontroll", "price": "from kr 2 990", "options": "", "packagePrice": "", "included": "" },
+				{ "name": "Fuse box", "price": "from kr 14 900", "options": "", "packagePrice": "", "included": "" },
+				{ "name": "Electrician", "price": "from kr 1 090/hr", "options": "", "packagePrice": "", "included": "" },
+				{ "name": "Lighting", "price": "on inspection", "options": "", "packagePrice": "", "included": "" },
+				{ "name": "New build", "price": "on inspection", "options": "", "packagePrice": "", "included": "" }
+			],
+			"items": { "type": "object", "properties": { "name": { "type": "string" }, "price": { "type": "string" }, "options": { "type": "string" }, "packagePrice": { "type": "string" }, "included": { "type": "string" } } }
+		}
+	}
+}

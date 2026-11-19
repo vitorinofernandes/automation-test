@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "se/faq",
+	"title": "SE FAQ (ask an electrician)",
+	"category": "design",
+	"icon": "editor-help",
+	"description": "Questions on the left, the chosen answer on the right.",
+	"supports": { "html": false, "align": false },
+	"render": "file:./render.php",
+	"attributes": {
+		"heading": { "type": "string", "default": "Ask an\nelectrician" },
+		"name": { "type": "string", "default": "Stavanger Elektro" },
+		"subtitle": { "type": "string", "default": "Certified electricians · Stavanger" },
+		"hint": { "type": "string", "default": "Pick a question, or call us for anything else" },
+		"phone": { "type": "string", "default": "51 54 44 44" },
+		"phoneUrl": { "type": "string", "default": "tel:+4751544444" },
+		"items": {
+			"type": "array",
+			"default": [
+				{ "q": "Is the inspection really free?", "a": "Yes. We come out, look at the job and give you a fixed-price quote. You decide afterwards — no obligation." },
+				{ "q": "How quickly can you come?", "a": "" },
+				{ "q": "Do you work for homes and businesses?", "a": "" },
+				{ "q": "Do I get documentation after the job?", "a": "" },
+				{ "q": "Can you install a charger I already bought?", "a": "" }
+			],
+			"items": { "type": "object", "properties": { "q": { "type": "string" }, "a": { "type": "string" } } }
+		}
+	}
+}

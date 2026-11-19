@@ -41,3 +41,61 @@ function se_enqueue_assets() {
 	wp_enqueue_style( 'stavanger-elektro', get_stylesheet_uri(), array(), SE_THEME_VERSION );
 }
 add_action( 'wp_enqueue_scripts', 'se_enqueue_assets' );
+
+/**
+ * Block styles (front end and editor) and the shared front-end script.
+ */
+function se_enqueue_block_assets() {
+	wp_enqueue_style( 'se-blocks', get_theme_file_uri( 'assets/css/blocks.css' ), array( 'stavanger-elektro' ), SE_THEME_VERSION );
+}
+add_action( 'wp_enqueue_scripts', 'se_enqueue_block_assets', 20 );
+
+function se_enqueue_view_script() {
+	wp_enqueue_script( 'se-blocks', get_theme_file_uri( 'assets/js/se-blocks.js' ), array(), SE_THEME_VERSION, array( 'strategy' => 'defer', 'in_footer' => true ) );
+}
+add_action( 'wp_enqueue_scripts', 'se_enqueue_view_script' );
+
+/**
+ * Editor: block styles plus the generic sidebar editor for the se/* blocks.
+ */
+function se_enqueue_editor_assets() {
+	wp_enqueue_script(
+		'se-editor',
+		get_theme_file_uri( 'assets/js/se-editor.js' ),
+		array( 'wp-blocks', 'wp-element', 'wp-block-editor', 'wp-components', 'wp-server-side-render', 'wp-hooks' ),
+		SE_THEME_VERSION,
+		true
+	);
+}
+add_action( 'enqueue_block_editor_assets', 'se_enqueue_editor_assets' );
+
+function se_editor_block_styles() {
+	add_editor_style( 'assets/css/blocks.css' );
+}
+add_action( 'after_setup_theme', 'se_editor_block_styles', 20 );
+
+/**
+ * Register every block in blocks/<name>/block.json.
+ */
+function se_register_blocks() {
+	foreach ( glob( get_theme_file_path( 'blocks/*/block.json' ) ) as $file ) {
+		register_block_type( dirname( $file ) );
+	}
+}
+add_action( 'init', 'se_register_blocks' );
+
+/* Render helpers */
+function se_text( $s ) {
+	return nl2br( esc_html( (string) $s ) );
+}
+
+function se_media_img( $url, $alt = '', $class = '' ) {
+	if ( $url ) {
+		return '<img class="' . esc_attr( $class ) . '" src="' . esc_url( $url ) . '" alt="' . esc_attr( $alt ) . '" loading="lazy" />';
+	}
+	return '<span class="se-ph ' . esc_attr( $class ) . '" aria-hidden="true"></span>';
+}
+
+function se_lines( $s ) {
+	return array_values( array_filter( array_map( 'trim', preg_split( '/\r\n|\r|\n/', (string) $s ) ) ) );
+}

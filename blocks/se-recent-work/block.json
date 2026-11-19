@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "se/recent-work",
+	"title": "SE Recent work (4-grid)",
+	"category": "design",
+	"icon": "images-alt2",
+	"description": "Heading, link and a grid of four project cards.",
+	"supports": { "html": false, "align": false },
+	"render": "file:./render.php",
+	"attributes": {
+		"anchor": { "type": "string", "default": "projects" },
+		"heading": { "type": "string", "default": "Recent work" },
+		"linkLabel": { "type": "string", "default": "All projects" },
+		"linkUrl": { "type": "string", "default": "#" },
+		"items": {
+			"type": "array",
+			"default": [
+				{ "projectImage": "", "tag": "Sola · Charging station", "title": "Two chargers in a shared garage", "url": "" },
+				{ "projectImage": "", "tag": "Stavanger · Fuse box", "title": "A 1970s fuse box, replaced", "url": "" },
+				{ "projectImage": "", "tag": "Sandnes · New build", "title": "Complete install in a new home", "url": "" },
+				{ "projectImage": "", "tag": "Hillevåg · Lighting", "title": "Warm, dimmable living-room lighting", "url": "" }
+			],
+			"items": { "type": "object", "properties": { "tag": { "type": "string" }, "title": { "type": "string" }, "projectImage": { "type": "string" }, "url": { "type": "string" } } }
+		}
+	}
+}

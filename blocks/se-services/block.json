@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "se/services",
+	"title": "SE Services carousel",
+	"category": "design",
+	"icon": "screenoptions",
+	"description": "Heading with a scrolling carousel of service cards.",
+	"supports": { "html": false, "align": false },
+	"render": "file:./render.php",
+	"attributes": {
+		"anchor": { "type": "string", "default": "services" },
+		"heading": { "type": "string", "default": "What we do" },
+		"intro": { "type": "string", "default": "Not sure which service you need? Book a free inspection and we’ll work it out together on site." },
+		"buttonLabel": { "type": "string", "default": "Call 51 54 44 44" },
+		"buttonUrl": { "type": "string", "default": "tel:+4751544444" },
+		"items": {
+			"type": "array",
+			"default": [
+				{ "title": "Electrician", "text": "Repairs, new sockets and troubleshooting — big or small jobs.", "price": "from kr 1 090 / hr", "badge": "" },
+				{ "title": "EV charger", "text": "Zaptec Go and Easee, installed at a fixed price with load balancing.", "price": "from kr 13 490", "badge": "" },
+				{ "title": "Lighting", "text": "Indoor, outdoor and smart lighting, planned together with you.", "price": "Price after inspection", "badge": "" },
+				{ "title": "El-kontroll", "text": "A full safety check of your home, with a written report.", "price": "from kr 2 990", "badge": "230 V" },
+				{ "title": "Fuse box", "text": "Modern boards with earth-fault breakers and surge protection.", "price": "from kr 14 900", "badge": "" },
+				{ "title": "New build", "text": "Complete installation, from drawings to handover.", "price": "Price after inspection", "badge": "" }
+			],
+			"items": { "type": "object", "properties": { "title": { "type": "string" }, "text": { "type": "string" }, "price": { "type": "string" }, "badge": { "type": "string" } } }
+		}
+	}
+}

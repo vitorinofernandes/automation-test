@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "se/stats",
+	"title": "SE Why choose us (stats)",
+	"category": "design",
+	"icon": "chart-bar",
+	"description": "Heading with a row of key figures.",
+	"supports": { "html": false, "align": false },
+	"render": "file:./render.php",
+	"attributes": {
+		"heading": { "type": "string", "default": "Why homeowners\nchoose us" },
+		"items": {
+			"type": "array",
+			"default": [
+				{ "value": "4.4", "label": "Google rating" },
+				{ "value": "2 h", "label": "Reply time" },
+				{ "value": "Free", "label": "Inspection" },
+				{ "value": "100%", "label": "Documented" }
+			],
+			"items": { "type": "object", "properties": { "value": { "type": "string" }, "label": { "type": "string" } } }
+		}
+	}
+}
