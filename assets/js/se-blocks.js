@@ -51,4 +51,57 @@
 			} );
 		} );
 	} );
+
+	// Contact: send the block's form to its Contact Form 7 form (REST feedback endpoint).
+	document.querySelectorAll( '[data-se-contact]' ).forEach( function ( form ) {
+		var status = form.querySelector( '.se-contact__response' );
+		var button = form.querySelector( '[type="submit"]' );
+		form.addEventListener( 'submit', function ( e ) {
+			e.preventDefault();
+			form.querySelectorAll( '.is-invalid' ).forEach( function ( f ) {
+				f.classList.remove( 'is-invalid' );
+			} );
+			form.querySelectorAll( '[aria-invalid]' ).forEach( function ( c ) {
+				c.removeAttribute( 'aria-invalid' );
+			} );
+			if ( button ) {
+				button.disabled = true;
+			}
+			fetch( form.action, { method: 'POST', body: new FormData( form ), headers: { Accept: 'application/json' } } )
+				.then( function ( r ) {
+					return r.json();
+				} )
+				.then( function ( res ) {
+					var ok = res && 'mail_sent' === res.status;
+					( res.invalid_fields || [] ).forEach( function ( inv ) {
+						var control = form.querySelector( '[name="' + String( inv.field ).replace( /"/g, '' ) + '"]' );
+						if ( control ) {
+							control.setAttribute( 'aria-invalid', 'true' );
+							var wrap = control.closest( '.se-contact__field' );
+							if ( wrap ) {
+								wrap.classList.add( 'is-invalid' );
+							}
+						}
+					} );
+					if ( status ) {
+						status.textContent = ( res && res.message ) || '';
+						status.classList.toggle( 'is-error', ! ok );
+					}
+					if ( ok ) {
+						form.reset();
+					}
+				} )
+				.catch( function () {
+					if ( status ) {
+						status.textContent = 'Sorry, the message could not be sent. Please call us.';
+						status.classList.add( 'is-error' );
+					}
+				} )
+				.finally( function () {
+					if ( button ) {
+						button.disabled = false;
+					}
+				} );
+		} );
+	} );
 } )();

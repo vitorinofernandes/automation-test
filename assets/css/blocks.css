@@ -136,30 +136,87 @@
 .se-reels__video.is-playing:hover .se-reels__play { opacity: 1; }
 .se-reels__time { position: absolute; left: 12px; bottom: 12px; padding: 4px 8px; border-radius: 6px; background: rgba(17, 17, 17, .7); color: var(--wp--preset--color--white); }
 
-/* Contact */
-.se-contact { background: var(--wp--preset--color--brand-green); color: var(--wp--preset--color--white); }
-.se-contact { position: relative; overflow: hidden; min-height: 900px; display: flex; align-items: center; }
+/* ------------------------------------------------------------------
+ * Contact (se/contact) — Figma "14 Contact — Van" 230:3561, values from section_html.
+ * ------------------------------------------------------------------ */
 .se-contact__bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.se-contact--has-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to right, rgba(1, 66, 37, .85) 0%, rgba(1, 66, 37, .5) 35%, transparent 70%); pointer-events: none; }
-.se-contact .se-contact__inner { position: relative; z-index: 1; width: 100%; }
-.se-contact__inner { display: grid; grid-template-columns: 496px 1fr; gap: var(--wp--preset--spacing--50); align-items: end; max-width: none; padding: 0 40px; }
-.se-contact__card { display: grid; gap: 24px; padding: 36px; border-radius: 24px; background: var(--wp--preset--color--white); color: var(--wp--preset--color--black); }
-.se-contact__card h2 { font-size: 56px; }
-.se-contact__note { margin: 0; font-size: var(--wp--preset--font-size--x-small); opacity: .6; }
-.se-contact__closing { margin: 0; justify-self: end; align-self: end; }
-.se-contact__closing a { display: inline-flex; align-items: center; gap: 10px; padding: 14px 20px; border-radius: 999px; background: var(--wp--preset--color--white); color: var(--wp--preset--color--brand-green); text-decoration: none; }
-.se-contact__closing svg { width: 20px; height: 20px; }
-.se-contact .se-contact__card .wpcf7 input[type="text"], .se-contact .se-contact__card .wpcf7 input[type="email"], .se-contact .se-contact__card .wpcf7 input[type="tel"], .se-contact .se-contact__card .wpcf7 select, .se-contact .se-contact__card .wpcf7 textarea { border: 0; border-bottom: 1px solid rgba(17, 17, 17, .3); border-radius: 0; padding: 8px 0; }
-.se-contact .wpcf7 label { display: block; margin-bottom: 16px; font-family: var(--wp--preset--font-family--space-mono); font-size: var(--wp--preset--font-size--x-small); text-transform: uppercase; }
-.se-contact .wpcf7 input[type="text"], .se-contact .wpcf7 input[type="email"], .se-contact .wpcf7 input[type="tel"], .se-contact .wpcf7 select, .se-contact .wpcf7 textarea { width: 100%; padding: 12px 14px; margin-top: 6px; border: 1px solid rgba(255, 255, 255, .4); border-radius: 8px; background: transparent; color: inherit; font: inherit; }
-.se-contact .wpcf7 input[type="submit"] { padding: 14px 24px; border: 0; border-radius: 999px; background: var(--wp--preset--color--primary-500); color: var(--wp--preset--color--black); font-weight: 500; cursor: pointer; }
+.se-contact__shade { background-image: linear-gradient(90deg, rgba(1, 45, 25, 0.78) 0%, rgba(1, 45, 25, 0.45) 38%, rgba(1, 45, 25, 0) 60%, rgba(1, 45, 25, 0) 100%); position: absolute; inset: 0; width: auto; height: auto; }
+.se-contact__question { margin: 0; font-family: "Hanken Grotesk", system-ui, sans-serif; font-size: 56px; font-weight: 400; line-height: 1; letter-spacing: -0.03em; color: #1f2b25; white-space: pre-line; overflow-wrap: break-word; width: 100%; max-width: 100%; flex-shrink: 0; }
+.se-contact__label { margin: 0; font-family: "Hanken Grotesk", system-ui, sans-serif; font-size: 13px; font-weight: 400; line-height: 1.4; letter-spacing: -0.01em; color: rgba(31, 43, 37, 0.55); white-space: pre; flex-shrink: 0; }
+.se-contact__control { margin: 0; font-family: "Hanken Grotesk", system-ui, sans-serif; font-size: 18px; font-weight: 400; line-height: 1.4; letter-spacing: -0.01em; color: #1f2b25; white-space: pre; flex-shrink: 0; }
+.se-contact__control::placeholder { color: rgba(31, 43, 37, 0.4); opacity: 1; }
+.se-contact__field { border-bottom: 1px solid rgba(31, 43, 37, 0.2); overflow: hidden; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 6px; padding: 0px 0px 10px 0px; width: 100%; max-width: 100%; flex-shrink: 0; }
+.se-contact__frame-1984081080 { display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 6px; width: 228px; flex-shrink: 1; min-width: 0; }
+.se-contact__icon-chevron-down { width: 20px; flex-shrink: 0; min-width: 0; height: 20px; }
+.se-contact__icon-chevron-down svg, .se-contact__icon-chevron-down img { width: 100%; height: 100%; }
+.se-contact__field--select { flex-direction: row; justify-content: space-between; align-items: flex-end; gap: 0; }
+.se-contact__note { margin: 0; font-family: "Hanken Grotesk", system-ui, sans-serif; font-size: 13px; font-weight: 400; line-height: 1.4; letter-spacing: -0.01em; color: rgba(31, 43, 37, 0.5); white-space: pre-line; overflow-wrap: break-word; width: 100%; max-width: 100%; flex-shrink: 0; }
+.se-contact__fields { overflow: hidden; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 18px; width: 100%; max-width: 100%; flex-shrink: 0; }
+.se-contact__frame-1984081078 { display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 20px; width: 100%; max-width: 100%; flex-shrink: 0; }
+.se-contact__send-request { margin: 0; font-family: "Hanken Grotesk", system-ui, sans-serif; font-size: 16px; font-weight: 500; line-height: 1.4; letter-spacing: -0.01em; color: #012d19; white-space: pre; min-width: 94px; flex-shrink: 1; }
+.se-contact__frame { width: 22px; flex-shrink: 0; min-width: 0; height: 14px; }
+.se-contact__frame svg, .se-contact__frame img { width: 100%; height: 100%; }
+.se-contact__button-send { background-color: #d99a62; border-radius: 28px; overflow: hidden; display: flex; flex-direction: row; justify-content: flex-start; align-items: center; gap: 10px; padding: 0px 20px 0px 24px; width: 170px; flex-shrink: 1; min-width: 0; height: 52px; }
+.se-contact__footer { overflow: hidden; display: flex; flex-direction: row; justify-content: space-between; align-items: center; width: 100%; max-width: 100%; flex-shrink: 0; }
+.se-contact__booking-card { display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 28px; width: 100%; max-width: 100%; flex-shrink: 0; }
+.se-contact__floating-card { background-color: #ffffff; border-radius: 24px; overflow: hidden; box-shadow: 0px 24px 60px 0px rgba(0, 0, 0, 0.22); display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; padding: 36px 36px 36px 36px; position: absolute; left: 2.78%; bottom: 40px; width: 34.44%; }
+.se-contact__hotspot-pulses { position: absolute; left: 91.94%; top: 448px; width: 1.94%; height: 28px; flex-shrink: 0; }
+.se-contact__hotspot-pulses svg, .se-contact__hotspot-pulses img { width: 100%; height: 100%; }
+.se-contact__frame-2 { width: 18px; flex-shrink: 0; min-width: 0; height: 18px; }
+.se-contact__frame-2 svg, .se-contact__frame-2 img { width: 100%; height: 100%; }
+.se-contact__that-s-us-call-51-54-44- { margin: 0; font-family: "Hanken Grotesk", system-ui, sans-serif; font-size: 16px; font-weight: 500; line-height: 1.4; letter-spacing: -0.01em; color: #012d19; white-space: pre; min-width: 200px; flex-shrink: 1; }
+.se-contact__button-call { background-color: #ffffff; border-radius: 28px; overflow: hidden; display: flex; flex-direction: row; justify-content: flex-start; align-items: center; gap: 10px; padding: 0px 22px 0px 20px; position: absolute; left: 78.47%; top: 720px; width: 18.75%; height: 52px; }
+.se-contact__callout-line { background-color: rgba(255, 255, 255, 0.7); position: absolute; left: 92.86%; top: 476px; width: 0.1%; height: 244px; }
+.se-contact { position: relative; width: 100%; box-sizing: border-box; overflow: hidden; min-height: 900px; }
+.se-contact, .se-contact * { box-sizing: border-box; }
+.se-contact img, .se-contact svg { display: block; max-width: 100%; }
+/* Not in Figma: real form controls, hover/focus states and the Contact Form 7 reply. */
+.se-contact__frame-1984081080 { flex: 1 1 auto; }
+.se-contact__control { display: block; width: 100%; height: 25px; padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; outline: none; }
+textarea.se-contact__control { resize: none; overflow: hidden; white-space: pre-wrap; }
+select.se-contact__control { -webkit-appearance: none; appearance: none; cursor: pointer; text-overflow: ellipsis; }
+.se-contact__field:focus-within { border-bottom-color: #1f2b25; }
+.se-contact__field.is-invalid { border-bottom-color: #c0392b; }
+.se-contact__button-send { border: 0; font: inherit; cursor: pointer; transition: background-color .2s ease; }
+.se-contact__button-send:hover { background-color: #e3ad7d; }
+.se-contact__button-send:disabled { cursor: not-allowed; }
+.se-contact__button-send:focus-visible, .se-contact__button-call:focus-visible { outline: 2px solid #012d19; outline-offset: 2px; }
+.se-contact__button-call { text-decoration: none; transition: background-color .2s ease; }
+.se-contact__button-call:hover { background-color: #f6f5ef; }
+.se-contact__response { margin: 0; font-family: "Hanken Grotesk", system-ui, sans-serif; font-size: 14px; line-height: 1.4; color: #1f2b25; }
+.se-contact__response:empty { display: none; }
+.se-contact__response.is-error { color: #c0392b; }
+@media (max-width: 900px) {
+  .se-contact__shade { z-index: 0; }
+  .se-contact__floating-card { position: relative; inset: auto; left: auto; top: auto; right: auto; bottom: auto; margin-left: 0; order: 1; width: 100%; max-width: 100%; }
+  .se-contact__question { font-size: 31px; white-space: pre-line; }
+  .se-contact__field { height: auto; min-height: 60px; }
+  .se-contact__frame-1984081080 { height: auto; min-height: 49px; }
+  .se-contact__fields { height: auto; min-height: 0; }
+  .se-contact__frame-1984081078 { height: auto; min-height: 0; }
+  .se-contact__send-request { min-width: 0; }
+  .se-contact__button-send { height: auto; min-height: 52px; }
+  .se-contact__footer { height: auto; min-height: 52px; }
+  .se-contact__booking-card { height: auto; min-height: 0; }
+  .se-contact__floating-card { height: auto; min-height: 0; }
+  .se-contact__hotspot-pulses { position: relative; inset: auto; left: auto; top: auto; right: auto; bottom: auto; margin-left: 0; order: 2; width: 28px; max-width: 100%; }
+  .se-contact__button-call { position: relative; inset: auto; left: auto; top: auto; right: auto; bottom: auto; margin-left: 0; order: 4; width: 100%; max-width: 100%; }
+  .se-contact__that-s-us-call-51-54-44- { min-width: 0; }
+  .se-contact__button-call { height: auto; min-height: 52px; }
+  .se-contact__callout-line { position: relative; inset: auto; left: auto; top: auto; right: auto; bottom: auto; margin-left: 0; order: 3; width: 1.5px; max-width: 100%; }
+  .se-contact__callout-line { display: none; }
+  .se-contact { display: flex; flex-direction: column; gap: 16px; height: auto; min-height: 0; padding: 48px 16px; }
+  .se-contact { min-height: 0; }
+  :where(.se-contact [class]) { max-width: 100%; }
+  .se-contact { padding-left: 16px; padding-right: 16px; }
+}
 
 /* Mobile: adapt the desktop design */
 @media (max-width: 781px) {
 	.se-section { padding: var(--wp--preset--spacing--50) var(--wp--preset--spacing--20); }
 	.se-hero { min-height: 520px; }
 	.se-head { flex-direction: column; align-items: flex-start; }
-	.se-stats__inner, .se-pricing__grid, .se-faq__grid, .se-reels__inner, .se-contact__inner { grid-template-columns: 1fr; }
+	.se-stats__inner, .se-pricing__grid, .se-faq__grid, .se-reels__inner { grid-template-columns: 1fr; }
 	.se-stats__grid { grid-template-columns: repeat(2, 1fr); }
 	.se-stats { min-height: 560px; }
 	.se-stats .se-stats__inner h2 { font-size: 36px; }
@@ -167,12 +224,6 @@
 	.se-statement { min-height: 360px; }
 	.se-statement__text { font-size: 32px; }
 	.se-statement__pill { width: 80px; height: 40px; }
-	.se-contact { min-height: 0; align-items: stretch; }
-	.se-contact--has-bg::after { background: linear-gradient(to bottom, rgba(1, 66, 37, .6) 0%, rgba(1, 66, 37, .3) 100%); }
-	.se-contact__inner { padding: 0; }
-	.se-contact__card { padding: 24px; }
-	.se-contact__card h2 { font-size: 36px; }
-	.se-contact__closing { justify-self: start; }
 	.se-pricing__panel { grid-template-columns: 1fr; }
 	.se-reels__grid { grid-template-columns: repeat(2, 1fr); }
 	.se-reels__text { flex-direction: column; align-items: flex-start; }

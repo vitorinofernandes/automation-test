@@ -47,7 +47,7 @@ All blocks live in `blocks/<name>/` (`block.json` + `render.php`), are registere
 | `se/pricing` | Price explorer (option C): service list and detail panel with an illustration per service |
 | `se/faq` | "Ask an electrician" questions and answer card |
 | `se/reels` | Instagram handle with a row of self-hosted video tiles (video, poster, duration each); four placeholder tiles until filled |
-| `se/contact` | Heading and Contact Form 7 form (set the form ID), optional background photo with green overlay |
+| `se/contact` | Booking card from the design (Figma 230:3561): heading, form fields (label, placeholder, type `text`/`tel`/`email`/`select`/`textarea`, comma-separated options, Contact Form 7 field name, required `yes`/`no`), privacy note and send button label; background photo with green shade; van callout ("That's us — call…" link, `showHotspot` `yes`/`no`). The form is sent to the Contact Form 7 form set in Form ID (hash or ID), which validates it and sends the mail; fields without a name take the form's fields in order, and a select uses the form field's own options when it has them |
 
 Image and video fields take a Media Library URL; empty images show a grey placeholder.
 
