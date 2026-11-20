@@ -1,0 +1,72 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "se/site-footer",
+	"title": "SE Site footer",
+	"category": "theme",
+	"icon": "table-row-after",
+	"description": "Site footer from Figma: logo, tagline, social links, Services and Shortcuts link columns, contact details and the bottom line. Social network: facebook, instagram or linkedin.",
+	"supports": { "html": false, "align": false, "multiple": false },
+	"render": "file:./render.php",
+	"attributes": {
+		"logoImage": { "type": "string", "default": "assets/icons/logo-white-2303056.svg" },
+		"logoAlt": { "type": "string", "default": "Stavanger elektro" },
+		"homeUrl": { "type": "string", "default": "" },
+		"text": { "type": "string", "default": "Safe, modern and reliable electrical services for homes and businesses throughout the Stavanger region." },
+		"social": {
+			"type": "array",
+			"default": [
+				{ "network": "facebook", "url": "#" },
+				{ "network": "instagram", "url": "#" },
+				{ "network": "linkedin", "url": "#" }
+			],
+			"items": { "type": "object", "properties": { "network": { "type": "string" }, "url": { "type": "string" } } }
+		},
+		"servicesTitle": { "type": "string", "default": "Services" },
+		"servicesLinks": {
+			"type": "array",
+			"default": [
+				{ "label": "Electrician", "url": "#" },
+				{ "label": "Charging Station", "url": "#" },
+				{ "label": "Lighting", "url": "#" },
+				{ "label": "Electrical Control", "url": "#" },
+				{ "label": "Fusebox", "url": "#" },
+				{ "label": "New Construction", "url": "#" }
+			],
+			"items": { "type": "object", "properties": { "label": { "type": "string" }, "url": { "type": "string" } } }
+		},
+		"shortcutsTitle": { "type": "string", "default": "Shortcuts" },
+		"shortcutsLinks": {
+			"type": "array",
+			"default": [
+				{ "label": "Home", "url": "/" },
+				{ "label": "Services", "url": "#services" },
+				{ "label": "About Us", "url": "#" },
+				{ "label": "Career", "url": "#" },
+				{ "label": "Current Affairs", "url": "#" },
+				{ "label": "Contact", "url": "#contact" }
+			],
+			"items": { "type": "object", "properties": { "label": { "type": "string" }, "url": { "type": "string" } } }
+		},
+		"contactTitle": { "type": "string", "default": "Get in Touch" },
+		"address": { "type": "string", "default": "Auglendsveien 14,\n4019 Stavanger" },
+		"addressUrl": { "type": "string", "default": "" },
+		"phone": { "type": "string", "default": "51 54 44 44" },
+		"phoneUrl": { "type": "string", "default": "tel:+4751544444" },
+		"email": { "type": "string", "default": "post@stavanger-elektro.no" },
+		"emailUrl": { "type": "string", "default": "mailto:post@stavanger-elektro.no" },
+		"hours": { "type": "string", "default": "Mon–Fri 09:00–15:00\nSat–Sun closed" },
+		"copyright": { "type": "string", "default": "© StavangerElektro" },
+		"orgText": { "type": "string", "default": "Org. no. 000 000 000 · Registered in DSB Elvirksomhetsregisteret" },
+		"legalLinks": {
+			"type": "array",
+			"default": [
+				{ "label": "Privacy Policy", "url": "#" },
+				{ "label": "Terms and Conditions", "url": "#" }
+			],
+			"items": { "type": "object", "properties": { "label": { "type": "string" }, "url": { "type": "string" } } }
+		},
+		"credit": { "type": "string", "default": "Powered by Kilowott" },
+		"creditUrl": { "type": "string", "default": "" }
+	}
+}

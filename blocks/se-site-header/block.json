@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "se/site-header",
+	"title": "SE Site header",
+	"category": "theme",
+	"icon": "table-row-before",
+	"description": "Site header from the Figma Nav: logo, menu, phone and button. Transparent over pages that start with a full-width section, solid dark green elsewhere. Header style: auto, overlay or solid.",
+	"supports": { "html": false, "align": false, "multiple": false },
+	"render": "file:./render.php",
+	"viewScript": "file:./view.js",
+	"attributes": {
+		"logoImage": { "type": "string", "default": "assets/icons/logo-white-2303056.svg" },
+		"logoAlt": { "type": "string", "default": "Stavanger elektro" },
+		"homeUrl": { "type": "string", "default": "" },
+		"menu": {
+			"type": "array",
+			"default": [
+				{ "label": "Services", "url": "#services" },
+				{ "label": "Prices", "url": "#prices" },
+				{ "label": "Projects", "url": "#projects" },
+				{ "label": "Contact", "url": "#contact" }
+			],
+			"items": { "type": "object", "properties": { "label": { "type": "string" }, "url": { "type": "string" } } }
+		},
+		"phone": { "type": "string", "default": "51 54 44 44" },
+		"phoneUrl": { "type": "string", "default": "tel:+4751544444" },
+		"buttonLabel": { "type": "string", "default": "Free inspection" },
+		"buttonUrl": { "type": "string", "default": "#contact" },
+		"menuLabel": { "type": "string", "default": "Menu" },
+		"headerStyle": { "type": "string", "default": "auto", "enum": [ "auto", "overlay", "solid" ] }
+	}
+}

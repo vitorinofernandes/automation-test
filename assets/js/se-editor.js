@@ -10,7 +10,7 @@
 	const { InspectorControls, MediaUpload, MediaUploadCheck, useBlockProps } = wp.blockEditor;
 	const { PanelBody, TextControl, TextareaControl, Button } = wp.components;
 	const ServerSideRender = wp.serverSideRender;
-	const TEXTAREA = [ 'heading', 'intro', 'text', 'a', 'included', 'quote', 'statement', 'hint', 'body' ];
+	const TEXTAREA = [ 'heading', 'intro', 'text', 'a', 'included', 'quote', 'statement', 'hint', 'body', 'address', 'hours' ];
 
 	const label = ( key ) => key.replace( /([A-Z])/g, ' $1' ).replace( /^./, ( c ) => c.toUpperCase() );
 
