@@ -3,7 +3,7 @@ Theme Name: Stavanger Elektro
 Theme URI: http://localhost/automation-test
 Author: Kilowott
 Description: Block theme for Stavanger Elektro, built from the Figma design.
-Version: 1.0.1
+Version: 1.1.0
 Requires at least: 7.1
 Requires PHP: 8.1
 License: GNU General Public License v2 or later
@@ -19,6 +19,7 @@ Text Domain: stavanger-elektro
 
 body {
 	-webkit-font-smoothing: antialiased;
+	overflow-x: clip;
 }
 
 img,
@@ -31,64 +32,57 @@ a {
 	text-underline-offset: 0.2em;
 }
 
-/* Header */
-.se-header {
-	position: relative;
-	z-index: 20;
+/* The header and footer template parts sit flush against the page content (no block gap). */
+.wp-site-blocks > header.wp-block-template-part,
+.wp-site-blocks > header.wp-block-template-part + *,
+.wp-site-blocks > footer.wp-block-template-part {
+	margin-block-start: 0;
 }
 
-.se-header a {
-	text-decoration: none;
+/* Page width and side padding from the design (1440 px frame, 40 px sides). */
+.se-wrap {
+	width: 100%;
+	max-width: var(--wp--style--global--wide-size);
+	margin-inline: auto;
 }
 
-.se-header .wp-block-navigation a:hover,
-.se-footer a:hover {
-	text-decoration: underline;
+.se-pad {
+	padding-inline: var(--wp--custom--side-padding);
 }
 
-.se-phone {
+/* Labels: Space Mono 13 px, the design's case (never forced to uppercase here). */
+.se-mono {
 	font-family: var(--wp--preset--font-family--space-mono);
-	font-size: var(--wp--preset--font-size--small);
-	white-space: nowrap;
+	font-size: var(--wp--custom--label--font-size);
+	line-height: var(--wp--custom--label--line-height);
+	letter-spacing: var(--wp--custom--label--letter-spacing);
 }
 
-/* Buttons */
+/* Buttons: #d99a62, square corners, 48 px high, padding 0 18 0 24, 16 px / 500. */
+.wp-element-button,
 .wp-block-button__link {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	min-height: var(--wp--custom--button--height);
 	transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.wp-block-button__link:hover {
-	background-color: var(--wp--preset--color--primary-800);
+.wp-element-button:hover,
+.wp-block-button__link:hover,
+.wp-element-button:focus-visible,
+.wp-block-button__link:focus-visible {
+	background-color: var(--wp--preset--color--dark-green);
 	color: var(--wp--preset--color--white);
 }
 
-/* Footer */
-.se-footer a {
-	text-decoration: none;
+:focus-visible {
+	outline: 2px solid var(--wp--preset--color--mint);
+	outline-offset: 2px;
 }
 
-.se-footer .se-label {
-	font-family: var(--wp--preset--font-family--space-mono);
-	font-size: var(--wp--preset--font-size--x-small);
-	text-transform: uppercase;
-	letter-spacing: 0.04em;
-	opacity: 0.7;
-}
-
-/* Mobile: adapt the desktop design */
-@media (max-width: 781px) {
-	.se-header .se-phone {
-		display: none;
-	}
-
-	.se-footer .se-footer-columns {
-		flex-direction: column;
-		gap: var(--wp--preset--spacing--40);
-	}
-
-	.se-footer .se-footer-bottom {
-		flex-direction: column;
-		align-items: flex-start;
-		gap: var(--wp--preset--spacing--20);
+@media (max-width: 900px) {
+	.se-pad {
+		padding-inline: var(--wp--custom--side-padding-mobile);
 	}
 }
