@@ -5,16 +5,39 @@
 	"title": "SE Contact (Contact Form 7)",
 	"category": "design",
 	"icon": "email",
-	"description": "Heading with a Contact Form 7 form and a call line.",
+	"description": "Booking card with the design's form fields (sent through a Contact Form 7 form), background photo and a call button. Fields: type is text, tel, email, select or textarea; options are separated by commas; name is the Contact Form 7 field name (empty = the form's fields in order); required is yes or no.",
 	"supports": { "html": false, "align": false },
 	"render": "file:./render.php",
 	"attributes": {
 		"backgroundImage": { "type": "string", "default": "" },
 		"anchor": { "type": "string", "default": "contact" },
 		"heading": { "type": "string", "default": "Book a free inspection." },
+		"fields": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"label": { "type": "string" },
+					"placeholder": { "type": "string" },
+					"type": { "type": "string" },
+					"options": { "type": "string" },
+					"name": { "type": "string" },
+					"required": { "type": "string" }
+				}
+			},
+			"default": [
+				{ "label": "Name", "placeholder": "Ola Nordmann", "type": "text", "options": "", "name": "", "required": "yes" },
+				{ "label": "Phone", "placeholder": "+47 000 00 000", "type": "tel", "options": "", "name": "", "required": "yes" },
+				{ "label": "Email", "placeholder": "ola@example.com", "type": "email", "options": "", "name": "", "required": "yes" },
+				{ "label": "What do you need help with?", "placeholder": "", "type": "select", "options": "Charging station (EV charger), Electrician, Lighting, El-kontroll, Fuse box, New build", "name": "", "required": "no" },
+				{ "label": "Message (optional)", "placeholder": "Briefly describe the job", "type": "textarea", "options": "", "name": "", "required": "no" }
+			]
+		},
 		"privacyNote": { "type": "string", "default": "We use your information to provide you with relevant content and, with your consent, send you updates that you may find useful*" },
+		"submitLabel": { "type": "string", "default": "Send request" },
 		"formId": { "type": "string", "default": "" },
 		"closing": { "type": "string", "default": "That’s us — call 51 54 44 44" },
-		"closingUrl": { "type": "string", "default": "tel:+4751544444" }
+		"closingUrl": { "type": "string", "default": "tel:+4751544444" },
+		"showHotspot": { "type": "string", "default": "yes" }
 	}
 }
